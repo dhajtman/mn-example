@@ -93,6 +93,19 @@
         <artifactId>maven-enforcer-plugin</artifactId>
       </plugin>
       <plugin>
+        <groupId>org.graalvm.buildtools</groupId>
+        <artifactId>native-maven-plugin</artifactId>
+        <version>0.10.3</version>
+        <configuration>
+          <!-- <1> -->
+          <imageName>mn-graalvm-application</imageName>
+          <buildArgs>
+            <!-- <2> -->
+            <buildArg>-Ob</buildArg>
+          </buildArgs>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>

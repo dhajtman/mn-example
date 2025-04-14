@@ -40,6 +40,6 @@ public class HelloControllerTest {
         String body = client.toBlocking().retrieve(request);
 
         assertNotNull(body);
-        assertEquals("Hello World", body);
+        assertEquals("Hello Today's World", body);
     }
 }

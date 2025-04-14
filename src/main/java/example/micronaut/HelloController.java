@@ -25,6 +25,6 @@ public class HelloController {
     @Get // <2>
     @Produces(MediaType.TEXT_PLAIN) // <3>
     public String index() {
-        return "Hello World"; // <4>
+        return "Hello Today's World"; // <4>
     }
 }
