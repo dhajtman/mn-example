@@ -9,7 +9,15 @@
     ```
 3. Run the GraalVM Native Executable
     ```bash
-    ./target/mn-graalvm-application
+    ./target/mn-example
+    ```
+4. Creating a Native Executable Inside Docker
+    ```bash
+   ./mvnw package -Dpackaging=docker-native
+    ```
+5. Sending a Request
+   ```bash
+    time curl localhost:8080/conferences/random
     ```
 
 ## Micronaut 4.7.6 Documentation

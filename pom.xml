@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>example.micronaut</groupId>
-  <artifactId>default</artifactId>
+  <artifactId>mn-example</artifactId>
   <version>0.1</version>
   <packaging>${packaging}</packaging>
 
@@ -98,11 +98,11 @@
         <version>0.10.3</version>
         <configuration>
           <!-- <1> -->
-          <imageName>mn-graalvm-application</imageName>
-          <buildArgs>
-            <!-- <2> -->
-            <buildArg>-Ob</buildArg>
-          </buildArgs>
+          <imageName>mn-example</imageName>
+<!--          <buildArgs>-->
+<!--            &lt;!&ndash; <2> &ndash;&gt;-->
+<!--            <buildArg>-Ob</buildArg>-->
+<!--          </buildArgs>-->
         </configuration>
       </plugin>
       <plugin>
@@ -132,7 +132,7 @@
           </annotationProcessorPaths>
           <compilerArgs>
             <arg>-Amicronaut.processing.group=example.micronaut</arg>
-            <arg>-Amicronaut.processing.module=default</arg>
+            <arg>-Amicronaut.processing.module=mn-example</arg>
           </compilerArgs>
         </configuration>
       </plugin>

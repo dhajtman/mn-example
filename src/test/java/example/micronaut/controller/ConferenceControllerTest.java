@@ -13,18 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package example.micronaut;
+package example.micronaut.controller;
 
-import io.micronaut.http.MediaType;
-import io.micronaut.http.annotation.Controller;
-import io.micronaut.http.annotation.Get;
-import io.micronaut.http.annotation.Produces;
+import io.micronaut.http.HttpRequest;
+import io.micronaut.http.client.HttpClient;
+import io.micronaut.http.client.annotation.Client;
+import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
+import org.junit.jupiter.api.Test;
 
-@Controller("/hello") // <1>
-public class HelloController {
-    @Get // <2>
-    @Produces(MediaType.TEXT_PLAIN) // <3>
-    public String index() {
-        return "Hello Today's World"; // <4>
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+@MicronautTest
+class ConferenceControllerTest {
+    @Test
+    void testHello(@Client("/") HttpClient client) {
+        HttpRequest<?> request = HttpRequest.GET("/conferences/random");
+        String body = client.toBlocking().retrieve(request);
+        assertNotNull(body);
     }
 }
