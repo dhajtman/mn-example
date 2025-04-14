@@ -15,7 +15,11 @@
     ```bash
    ./mvnw package -Dpackaging=docker-native
     ```
-5. Sending a Request
+5. Run the Docker Image
+    ```bash
+    docker run --rm -p 8080:8080 mn-example
+    ```
+6. Sending a Request
    ```bash
     time curl localhost:8080/conferences/random
     ```
